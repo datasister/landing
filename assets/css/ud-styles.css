@@ -530,7 +530,36 @@ p {
   font-size: 45px;
   line-height: 60px;
   text-align: center;
-  margin-bottom: 30px;
+  margin: 0 auto;
+}
+
+.ud-hero-title .line {
+  display: block; /* Each line is on a new line */
+  overflow: hidden;
+  border-right: .15em solid transparent;
+  white-space: nowrap; /* Keeps text from wrapping mid-line */
+  width: 0; /* Start with width 0 for typewriter effect */
+  animation: typing 2s steps(30, end) forwards, blink-caret 1.5s step-end infinite;
+}
+
+/* Delay each line to reveal one after another */
+.ud-hero-title .line:nth-child(1) {
+  animation-delay: 0s;
+}
+.ud-hero-title .line:nth-child(2) {
+  animation-delay: 2.5s; /* Adjust timing to match the typing duration */
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  90% { border-color: transparent }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -556,6 +585,7 @@ p {
   opacity: 0.8;
   max-width: 600px;
   margin: auto;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
